@@ -18,7 +18,7 @@ ConfigParser模块来对ini文件进行读写操作
 read(filename) 读取ini文件内容
 sections() 获取所有的section，并以列表的形式返回
 options(sections) 获取指定section的所有option
-get(section,option) 获取section中option的值，返回为string类型
+get(section,option) 获取section中value的值，返回为string类型
 写入
 
 set( section, option, value) 对section中的option进行更新
@@ -47,4 +47,8 @@ for sec in sections:
     key=config.options(sec)
     print(key)
 #根据sections和options获取对应的value值
+for sec in sections:
+    for option in config.options(sec):
+        print('[%s]%s=%s'%(sec,option,config.get(sec,option)))
+
 
