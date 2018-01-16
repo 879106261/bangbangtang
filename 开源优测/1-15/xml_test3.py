@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     root = ET.fromstring(text_xml)
     print(root.tag)
-    # 遍历输出student及其no"属性
+    # 遍历输出student及其no"属性ui
     for child in root:
         print(child.tag, "no：", child.attrib["no"])
     # 遍历rank节点
