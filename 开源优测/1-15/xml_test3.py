@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     # 加载xml文档
 
-    text_xml = open("data.xml",'w').read()
+    text_xml = open("data.xml").read()
     print(type(text_xml))
 
     root = ET.fromstring(text_xml)
@@ -65,4 +65,4 @@ if __name__ == "__main__":
             print('删除一个gender节点')
             student.remove(gender)
 
-    text_xml.write("data_demo_new2.xml", encoding="utf-8")
+    #text_xml.write("data_demo_new2.xml", encoding="utf-8")

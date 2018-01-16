@@ -85,4 +85,4 @@ for student in root.iter('student'):
     if gender is not None:
         print('删除一个gender节点')
         student.remove(gender)
-tree.write("data_demo_new.xml", encoding="utf-8")
+data_string.write("data_demo_new3.xml", encoding="utf-8")

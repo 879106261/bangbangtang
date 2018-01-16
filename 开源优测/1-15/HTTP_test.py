@@ -15,11 +15,12 @@ if __name__=='__main__':
     count=ebook_dict['count']
     total=ebook_dict['total']
     with codecs.open('books.csv','w','utf-8')as csvfile:
-        spanwriter=csv.writer(csvfile,delimiter=',',quotechar='|',quoting=csv.QUOTE_MINIMAL)
+        spamwriter=csv.writer(csvfile,delimiter=',',quotechar='|',quoting=csv.QUOTE_MINIMAL)
         spamwriter.writerow(["书名", "作者", "描述", "出版社", "价格"])
         #写书信息
         for book in ebook_dict['books']:
-            spamwriter.writerow([book['title'],','.join(book['author']),book["summary"],book["publisher"], book["price"]])
+            spamwriter.writerow([book['title'],','.join(book['author']),book['summary'],book['publisher'], book['price']])
+
 # 从第2页开始，获取其他书籍信息
     for start in range(1,int(total/count)+1):
         url='https://api.douban.com/v2/book/search?q=python&start=%d'%start
@@ -34,6 +35,13 @@ if __name__=='__main__':
         ebook_dict=eval(ebook_str)
         #输出书籍信息
 
+    ebook_dict=eval(ebook_str)
+    count=ebook_dict['count']
+    total=ebook_dict['total']
+    with codecs.open('books.csv','w','utf-8')as csvfile:
+        spamwriter=csv.writer(csvfile,delimiter=',',quotechar='|',quoting=csv.QUOTE_MINIMAL)
+        spamwriter.writerow(["书名", "作者", "描述", "出版社", "价格"])
+        #写书信息
         for book in ebook_dict['books']:
-            spamwriter.writerow([book['title'], ','.join(book['author']), book["summary"], book["publisher"], book["price"]])
-    print('总计搜索了%d本书的信息'%total)
+            spamwriter.writerow([book['title'],','.join(book['author']),book['summary'],book['publisher'], book['price']])
+    print('总计搜索了%d本书的信息' % total)

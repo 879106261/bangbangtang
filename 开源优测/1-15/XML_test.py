@@ -60,4 +60,4 @@ for student in root.iter('student'):
         print('删除一个gender节点')
         student.remove(gender)
 
-tree.write("data_demo_new.xml", encoding="utf-8")
+tree.write("data_demo_new1.xml", encoding="utf-8")
